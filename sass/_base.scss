@@ -13,3 +13,43 @@ $color-grey-dark-2: #6D5D4B;
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
+
+*,
+*::before,
+*::after  {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;  
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;  // 10px/16px =62.5%   16px browser default font
+}
+ 
+body {
+    font-family: $font-primary;
+    color:$color-grey-dark-2;
+    font-weight: 300;
+}
+
+.container { 
+    display: grid;
+    grid-template-rows: 80vh min-content 40vw repeat(3, min-content) ;
+    //grid-template-columns: repeat(8,1fr);  
+   // grid-template-columns: repeat(8,14rem);   // total 1140px max-width  and 8 columns in it we are going to take so 1140 / 8  140px approx so 14rem
+     // the above columns are fixed 140px width  ... so now we make it adaptive
+    
+    // so we need 8 columns which are adaptive and atleast to mininum of their content and max of 140px
+    // grid-template-columns: repeat(8,minmax(min-content, 14rem));
+
+    // 1 side bar 0f 8rem on left
+    //grid-template-columns:8rem  repeat(8,minmax(min-content, 14rem));
+    // two columns on both sides of 8 columns to make the 8 columns to center in the area oter than the side bar
+    grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start]repeat(8,[col-start] minmax(min-content, 14rem)[col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+
+    & > * {
+        font-size: 3rem;
+    }
+}
