@@ -7,18 +7,21 @@
     padding-top: 4rem;  
     line-height: 1;  
 
-    display: grid; 
+    display: grid;     
 
-    grid-template-rows: 1fr min-content minmax(6rem,min-content) 1fr ;
+    grid-template-rows: 1fr min-content min-content 1fr min-content;
     grid-template-columns: minmax(min-content,max-content); //resopnsive  
     justify-content: center; 
     grid-gap: 1.5rem; 
 
-
+ 
     @media only screen and (max-width: $bp-medium) {
         grid-column: 1/-1;
-    } 
+    }    
 
+    @media only screen and (max-width: $bp-small) {
+        padding: 5rem;
+    } 
     &__logo {
         height: 3rem;  
         justify-self: center;    
@@ -34,7 +37,6 @@
         display: grid;  
         grid-template-columns: 1fr max-content 1fr;  
         color: $color-grey-light-2; 
-        margin-bottom: 1rem;  
         align-items: center;
 
         &::before,
