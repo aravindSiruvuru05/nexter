@@ -14,7 +14,7 @@ $color-grey-dark-2: #6D5D4B;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
-*,
+*, 
 *::before,
 *::after  {
     margin: 0;
@@ -31,6 +31,7 @@ body {
     font-family: $font-primary;
     color:$color-grey-dark-2;
     font-weight: 300;
+    line-height: 1.6;   
 }
 
 .container { 
@@ -42,7 +43,7 @@ body {
     
     // so we need 8 columns which are adaptive and atleast to mininum of their content and max of 140px
     // grid-template-columns: repeat(8,minmax(min-content, 14rem));
-
+ 
     // 1 side bar 0f 8rem on left
     //grid-template-columns:8rem  repeat(8,minmax(min-content, 14rem));
     // two columns on both sides of 8 columns to make the 8 columns to center in the area oter than the side bar

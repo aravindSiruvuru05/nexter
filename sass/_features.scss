@@ -3,6 +3,33 @@
 
     margin: 5rem 0; 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 6rem;
-} 
+    grid-template-columns: repeat(auto-fill,minmax(25rem, 1fr) );
+    grid-gap: 6rem; 
+    
+    // the default of this will be stretch so the elements with 
+    // less content will stretch bottom or middle and disuturb our requirement
+    align-items: start; 
+}  
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2rem;
+
+    &__icon {
+        fill: $color-primary;       
+        width: 4.5rem;
+        height: 4.5rem;
+
+        // 1/-1 cant be used becoz -1 extends till explicit grid
+        grid-row:  1/span 2;
+
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem; 
+    }
+}

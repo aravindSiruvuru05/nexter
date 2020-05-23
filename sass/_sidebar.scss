@@ -3,3 +3,36 @@
     grid-column: sidebar-start / sidebar-end;
     grid-row: 1/-1;
 }
+
+.nav-btn {
+    border: none;
+    border-radius: 0;
+    background-color: white;
+    width: 5rem;
+    height: .15rem;
+    text-align: center;  
+    margin: 2rem 0 0 1.5rem; 
+    
+     
+    position: relative;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 5rem;
+        height: .15rem;  
+        top: -1rem;  
+        left: 0;
+        transition: all .2s;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        background-color: white;
+        width: 5rem; 
+        height: .15rem;         
+        top: 1rem;  
+        left: 0;
+    }
+}
