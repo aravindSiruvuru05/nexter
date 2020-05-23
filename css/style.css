@@ -24,6 +24,9 @@ body {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400; }
 
+.heading-1 {
+  font-size: 4.5rem; }
+
 .heading-2 {
   font-size: 4rem;
   font-style: italic;
@@ -74,38 +77,78 @@ body {
 .sidebar {
   background-color: #c69963;
   grid-column: sidebar-start / sidebar-end;
-  grid-row: 1/-1; }
+  grid-row: 1/-1;
+  display: flex;
+  justify-content: center; }
 
 .nav-btn {
   border: none;
   border-radius: 0;
-  background-color: white;
-  width: 5rem;
-  height: .15rem;
-  text-align: center;
-  margin: 2rem 0 0 1.5rem;
-  position: relative; }
-  .nav-btn::before {
+  margin-top: 4rem;
+  outline: none; }
+  .nav-btn, .nav-btn::before, .nav-btn::after {
+    background-color: #fff;
+    height: 2px;
+    width: 4.5rem; }
+  .nav-btn::before, .nav-btn::after {
     content: "";
-    position: absolute;
-    background-color: white;
-    width: 5rem;
-    height: .15rem;
-    top: -1rem;
-    left: 0;
+    display: block;
     transition: all .2s; }
+  .nav-btn:hover {
+    cursor: pointer; }
+  .nav-btn::before {
+    transform: translateY(-1.3rem); }
   .nav-btn::after {
-    content: "";
-    position: absolute;
-    background-color: white;
-    width: 5rem;
-    height: .15rem;
-    top: 1rem;
-    left: 0; }
+    transform: translateY(1.3rem); }
+
+.nav-icon:hover {
+  cursor: pointer; }
+  .nav-icon:hover .nav-btn::before {
+    transform: translateY(-1.5rem); }
+  .nav-icon:hover .nav-btn::after {
+    transform: translateY(1.5rem); }
 
 .header {
-  background-color: #f9f7f6;
-  grid-column: full-start / col-end 6; }
+  background-image: linear-gradient(rgba(16, 29, 44, 0.75), rgba(16, 29, 44, 0.75)), url(/img/hero.jpeg);
+  background-position: center;
+  grid-column: full-start / col-end 6;
+  color: white;
+  display: grid;
+  padding: 8rem;
+  padding-top: 4rem;
+  line-height: 1;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  grid-template-columns: max-content;
+  justify-content: center;
+  grid-gap: 1.5rem; }
+  .header__logo {
+    height: 3rem;
+    justify-self: center; }
+  .header__btn {
+    align-self: flex-start;
+    justify-self: start; }
+  .header__seenon-text {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    color: #aaa;
+    margin-bottom: 1rem;
+    align-items: center; }
+    .header__seenon-text::before, .header__seenon-text::after {
+      align-self: center;
+      content: "";
+      display: inline-block;
+      height: .1rem;
+      width: 25rem;
+      background-color: currentColor; }
+  .header__seenon-logos {
+    display: grid;
+    grid-template-columns: repeat(4, min-content);
+    grid-column-gap: 3rem;
+    justify-content: center; }
+    .header__seenon-logos img {
+      height: 2.5rem;
+      filter: brightness(70%); }
 
 .realtors {
   background-color: #101d2c;

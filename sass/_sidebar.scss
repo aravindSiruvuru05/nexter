@@ -1,38 +1,47 @@
 .sidebar {
     background-color: $color-primary;
     grid-column: sidebar-start / sidebar-end;
-    grid-row: 1/-1;
-}
+    grid-row: 1/-1; 
 
-.nav-btn {
+    display: flex;
+    justify-content: center;
+}   
+
+.nav-btn { 
     border: none;
-    border-radius: 0;
-    background-color: white;
-    width: 5rem;
-    height: .15rem;
-    text-align: center;  
-    margin: 2rem 0 0 1.5rem; 
-    
-     
-    position: relative;
-    
-    &::before {
-        content: "";
-        position: absolute;
-        background-color: white;
-        width: 5rem;
-        height: .15rem;  
-        top: -1rem;  
-        left: 0;
-        transition: all .2s;
-    }
+    border-radius: 0; 
+    margin-top: 4rem;
+    outline: none;
+
+    &,    
+    &::before,
     &::after {
+        background-color: #fff;
+        height: 2px;
+        width: 4.5rem; 
+    }         
+
+    &::before,
+    &::after { 
         content: "";
-        position: absolute;
-        background-color: white;
-        width: 5rem; 
-        height: .15rem;         
-        top: 1rem;  
-        left: 0;
+        display: block;
+        transition: all .2s;     
+    }  
+
+    &:hover {
+        cursor: pointer;
     }
+
+    &::before {transform: translateY(-1.3rem);}
+    &::after {transform: translateY(1.3rem);}
+     
+}  
+
+.nav-icon {
+    &:hover {
+        cursor: pointer;
+        .nav-btn::before {transform: translateY(-1.5rem);}
+        .nav-btn::after {transform: translateY(1.5rem);}
+    }
+
 }
